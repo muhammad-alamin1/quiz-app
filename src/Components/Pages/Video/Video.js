@@ -10,7 +10,7 @@ export default function Video() {
                     <img src={Clang} alt="" />
                     <p>C Programming Language</p>
                     <div className="qmeta">
-                        <p>Questions</p>
+                        <p>Questions: 3</p>
                         <p>Score : </p>
                     </div>
                 </div>
