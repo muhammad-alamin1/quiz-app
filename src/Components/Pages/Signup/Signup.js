@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './signup.css';
 
 export default function Signup() {
@@ -37,7 +38,7 @@ export default function Signup() {
                     </div>
 
                     <div className="info">
-                        Already have an account? <a href="#">Login</a>
+                        Already have an account? <Link to="/login">Login</Link>
                     </div>
                 </form>
             </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Account from '../Account/Account';
 import './nav.css';
 
@@ -8,9 +9,9 @@ export default function Nav() {
         <nav class="nav">
             <ul>
                 <li>
-                    <a href="index.html" class="brand">
+                    <Link to="/" class="brand">
                         <h3>Programming Quiz</h3>
-                    </a>
+                    </Link>
                 </li>
             </ul>
             <Account />
