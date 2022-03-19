@@ -5,13 +5,13 @@ import Video from '../Video/Video';
 import './videos.css';
 
 export default function Videos() {
-    const { loading, error, videos, hasMore } = useVideoList(0);
+    const { loading, error, videos } = useVideoList(0);
     // console.log(videos[0]);
     return (
         <div className="videos">
             {
                 videos.length > 0 && videos[0].map(video => (
-                    <Link to="/quiz" key={video.youtubeID} ><Video title={video.title} id={video.youtubeID} noq={video.noq} /></Link>
+                    <Link to={`/quiz/${video.id}`} key={video.youtubeID} ><Video key={video.youtubeID} title={video.title} id={video.youtubeID} noq={video.noq} /></Link>
                 ))
             }
             {

@@ -1,25 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './progressbar.css';
 
-export default function ProgressBar() {
+export default function ProgressBar({ next, prev, percentage, submit }) {
     return (
         <div className="progressBar">
-            <div className="backButton">
+            <div className="backButton" onClick={prev} >
                 <span className="material-icons-outlined"> arrow_back </span>
             </div>
             <div className="rangeArea">
-                <div className="tooltip">24% Cimplete!</div>
+                <div className="tooltip">{percentage}% Cimplete!</div>
                 <div className="rangeBody">
-                    <div className="progress" style={{ width: '20%' }}></div>
+                    <div className="progress" style={{ width: `${percentage}%` }}></div>
                 </div>
             </div>
-            <Link to="/result">
-                <button className="button next">
-                    <span>Next</span>
-                    <span className="material-icons-outlined"> arrow_forward </span>
-                </button>
-            </Link>
+            <button className="button next" onClick={percentage === 100 ? submit : next} >
+                <span>{percentage === 100 ? 'Submit' : 'Next'}</span>
+                <span className="material-icons-outlined"> arrow_forward </span>
+            </button>
         </div>
     )
 }
