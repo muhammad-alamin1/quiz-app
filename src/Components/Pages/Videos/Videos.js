@@ -11,7 +11,7 @@ export default function Videos() {
         <div className="videos">
             {
                 videos.length > 0 && videos[0].map(video => (
-                    <Link to={`/quiz/${video.youtubeID}`} key={video.youtubeID} ><Video key={video.youtubeID} title={video.title} id={video.youtubeID} noq={video.noq} /></Link>
+                    <Link to={`/quiz/${video.youtubeID}`} key={video.youtubeID} ><Video key={video.youtubeID} title={video.title} id={video.youtubeID} noq={video.noq} thumbnail={video.thumbnail} /></Link>
                 ))
             }
             {

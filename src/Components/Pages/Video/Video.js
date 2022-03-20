@@ -1,11 +1,11 @@
 import React from 'react';
 import './video.css';
 
-export default function Video({ title, id, noq }) {
+export default function Video({ title, id, noq, thumbnail }) {
     return (
         <div>
             <div className="video">
-                <img src={`http://img.youtube.com/vi/${id}/maxresdefault.jpg`} alt={title} />
+                <img src={thumbnail} alt={title} />
                 <p>{title}</p>
                 <div className="qmeta">
                     <p>Questions: {noq}</p>
