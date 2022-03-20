@@ -1,13 +1,13 @@
 import React from 'react';
 import './summary.css';
 
-export default function Summary() {
+export default function Summary({ score, noq }) {
     return (
         <div className="summary">
             <div className="point">
-                <p className="score">
+                <p className="score" style={{ textAlign: 'center' }}>
                     Your score is <br />
-                    5 out of 10
+                    {score} out of {noq * 5}
                 </p>
             </div>
         </div>

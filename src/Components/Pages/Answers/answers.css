@@ -47,11 +47,11 @@
 }
 
 .correct {
-  background: var(--successGreen) !important;
+  background: var(--successGreen);
   font-weight: 600;
 }
 
 .wrong {
-  background: var(--dangerRed) !important;
+  background: var(--dangerRed);
   font-weight: 600;
 }

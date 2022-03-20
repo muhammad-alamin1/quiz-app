@@ -39,7 +39,7 @@ export default function Quiz() {
     const [currQuestion, setCurrQuestion] = useState(0);
     const [qna, dispatch] = useReducer(reducer, initialState);
     const { currUser } = useAuth();
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => {
         dispatch({
@@ -84,10 +84,9 @@ export default function Quiz() {
             [id]: qna
         });
 
-        history({
-            pathname: `/result/${id}`,
+        navigate(`/result/${id}`, {
             state: {
-                qna,
+                qna
             }
         });
     }
@@ -102,7 +101,7 @@ export default function Quiz() {
             {!loading && !error && qna && qna.length > 0 && (
                 <>
                     <h1 id="question-title">{qna[0][currQuestion].title}</h1>
-                    <Answers options={qna[0][currQuestion].options} handleAnswerChanged={handleAnswerChanged} />
+                    <Answers input={true} options={qna[0][currQuestion].options} handleAnswerChanged={handleAnswerChanged} />
                     <ProgressBar next={nextQuestionHandler} prev={prevQuestionHandler} percentage={percentage} submit={submitQuestion} />
                 </>
             )}
